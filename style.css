@@ -13,9 +13,9 @@ img {
   margin-bottom: 20px;
 }
 .profile-pic {
-  width: 100%;
-  max-width: 600px;
+  width: 280px;
   display: block;
   margin: 20px auto;
-  border-radius: 10px;
+  border-radius: 14px;
 }
+
