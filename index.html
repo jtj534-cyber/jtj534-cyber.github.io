@@ -8,37 +8,28 @@
 </head>
 
 <body>
-  <header class="card">
-     <img src="profile.jpg.jpg" alt="Profile photo" class="profile-pic">
-    <h1>Saeed Al-Korbi</h1>
-    <p class="tagline">Computer Science undergraduate – interested in web development and data</p>
 
-    <p class="cta">
-      <a class="btn" href="#projects">View projects</a>
-      <a class="btn" href="#contact">Contact</a>
-    </p>
-  </header>
+<header class="card">
+  <img src="profile.jpg.jpg" alt="Profile photo" class="profile-pic">
+  <h1>Saeed Al-Korbi</h1>
+  <p class="tagline">Computer Science undergraduate – interested in web development and data</p>
 
-  <main class="card">
-    <section id="about">
-      <h2>About me</h2>
-      <p>I am a first‑year Computer Science student at the University of York.</p>
-      <p>This year I have been learning HTML, CSS, GitHub Pages, and basic programming concepts.</p>
-      <p>I am interested in building reliable, user-friendly websites and data-driven applications.</p>
-    </section>
+  <p class="cta">
+    <a class="btn" href="#projects">View projects</a>
+    <a class="btn" href="#contact">Contact</a>
+  </p>
+</header>
 
-    <section id="projects">
-      <h2>Featured projects</h2>
+<main class="card">
 
-      <article class="project">
-        <h3>Portfolio website (GitHub Pages)</h3>
-        <p><strong>Summary:</strong> A simple portfolio website hosted on GitHub Pages.</p>
-        <p><strong>Tech stack:</strong> HTML, CSS, GitHub</p>
-        <p><strong>Challenges:</strong> Learned file naming, linking pages, and deploying updates.</p>
-        <p><a href="https://github.com/jtj534-cyber/jtj534-cyber.github.io">Source code</a></p>
-      </article>
-    </section>
-    <section id="projects">
+<section id="about">
+  <h2>About me</h2>
+  <p>I am a first-year Computer Science student at the University of York.</p>
+  <p>This year I have been learning HTML, CSS, GitHub Pages, and basic programming concepts.</p>
+  <p>I am interested in building reliable, user-friendly websites and data-driven applications.</p>
+</section>
+
+<section id="projects">
   <h2>Featured projects</h2>
 
   <article class="project">
@@ -46,22 +37,23 @@
     <p><strong>Summary:</strong> A simple portfolio website hosted on GitHub Pages.</p>
     <p><strong>Tech stack:</strong> HTML, CSS, GitHub</p>
     <p><strong>Challenges:</strong> Learned file naming, linking pages, and deploying updates.</p>
+    <p><a href="https://github.com/jtj534-cyber/jtj534-cyber.github.io">Source code</a></p>
   </article>
+
 </section>
 
 <p>
   <a href="maths.html">View my CS Maths & Tools page</a>
 </p>
 
+<section id="skills">
+  <h2>Skills and tools</h2>
+  <p><strong>Web:</strong> HTML, CSS</p>
+  <p><strong>Tools:</strong> Git, GitHub, VS Code</p>
+  <p><strong>Interests:</strong> Web development, cybersecurity, data</p>
+</section>
 
-    <section id="skills">
-      <h2>Skills and tools</h2>
-      <p><strong>Web:</strong> HTML, CSS</p>
-      <p><strong>Tools:</strong> Git, GitHub, VS Code</p>
-      <p><strong>Interests:</strong> Web development, cybersecurity, data</p>
-    </section>
-
-    <section id="production-diary">
+<section id="production-diary">
   <h2>Production diary – Week 15</h2>
   <p><strong>Date:</strong> 13 February 2026</p>
 
@@ -72,47 +64,93 @@
   </p>
 
   <p>
-    I also created a CS Maths &amp; Tools page (maths.html) and built a small JavaScript tool
-    that converts a decimal number into binary and hexadecimal. I tested it with different
-    numbers to make sure it worked correctly.
+    I also created a CS Maths & Tools page (maths.html) and built a small JavaScript tool
+    that converts a decimal number into binary and hexadecimal.
   </p>
 
   <p>
-    The achievement I am most proud of is getting the maths tool working properly. It was
-    satisfying to see the result update when I clicked the button, and it helped me understand
-    how JavaScript can take user input and display output on a webpage.
+    The most challenging part was using GitHub correctly. I had to debug file names,
+    links between pages, and commit updates carefully.
   </p>
 
   <p>
-    The most challenging part was using GitHub correctly. I found it difficult at first to
-    keep track of commits, file names, and links between pages. A small mistake like a wrong
-    filename or a missing link stopped parts of the site from working, so I had to debug carefully.
-  </p>
-
-  <p>
-    From this work, I learned more about HTML structure, CSS styling, and how JavaScript adds
-    interactivity to a static website. I also learned that binary uses powers of two and is used
-    in computers because hardware works with two states (on and off).
-  </p>
-
-  <p>
-    Next week I want to add one more project entry with a clearer description and links, and
-    improve the navigation so visitors can move around the website more easily.
+    From this work, I learned more about HTML structure, CSS styling, and how JavaScript
+    adds interactivity to a static website.
   </p>
 </section>
 
+<section id="contact">
+  <h2>Contact</h2>
 
+  <form id="contact-form">
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:jtj534@york.ac.uk">jtj534@york.ac.uk</a></p>
-      <p>GitHub: <a href="https://github.com/jtj534-cyber">jtj534-cyber</a></p>
-      <p>Location: York, United Kingdom</p>
-    </section>
-  </main>
+    <p>
+      <label>Your name</label><br>
+      <input type="text" id="name" required>
+    </p>
 
-  <footer class="footer">
-    <p>© 2026 Saeed Al-Korbi</p>
-  </footer>
+    <p>
+      <label>Your email</label><br>
+      <input type="email" id="email" required>
+    </p>
+
+    <p>
+      <label>Message</label><br>
+      <textarea id="message" required></textarea>
+    </p>
+
+    <button type="submit">Send message</button>
+    <p id="form-status"></p>
+
+  </form>
+
+</section>
+
+</main>
+
+<footer class="footer">
+  <p>© 2026 Saeed Al-Korbi</p>
+</footer>
+
+<script>
+
+const SUPABASE_URL = "https://csovospeewcokhxrjdzx.supabase.co";
+const SUPABASE_ANON = "sb_publishable_k8-kwQErio_52NO-ycEF4Q_IK_TU_nO";
+
+document.getElementById("contact-form").addEventListener("submit", async function(event) {
+
+  event.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
+  const status = document.getElementById("form-status");
+
+  const response = await fetch(`${SUPABASE_URL}/rest/v1/contact_messages`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "apikey": SUPABASE_ANON,
+      "Authorization": `Bearer ${SUPABASE_ANON}`,
+      "Prefer": "return=minimal"
+    },
+    body: JSON.stringify({
+      name: name,
+      email: email,
+      message: message
+    })
+  });
+
+  if (response.ok) {
+    status.textContent = "Message sent successfully!";
+    document.getElementById("contact-form").reset();
+  } else {
+    status.textContent = "Error sending message.";
+  }
+
+});
+
+</script>
+
 </body>
 </html>
