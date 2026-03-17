@@ -9,51 +9,58 @@
 
 <body>
 
+<div class="container">
+
 <header class="card">
   <img src="profile.jpg.jpg" alt="Profile photo" class="profile-pic">
   <h1>Saeed Al-Korbi</h1>
   <p class="tagline">Computer Science undergraduate – interested in web development and data</p>
 
-  <p class="cta">
-    <a class="btn" href="#projects">View projects</a>
-    <a class="btn" href="#contact">Contact</a>
-  </p>
+  <div class="buttons">
+    <a href="#projects" class="btn btn-primary">View Projects</a>
+    <a href="#contact" class="btn btn-secondary">Contact</a>
+  </div>
 </header>
 
-<main class="card">
+<main>
 
-<section id="about">
+<section class="card" id="about">
   <h2>About me</h2>
   <p>I am a first-year Computer Science student at the University of York.</p>
   <p>This year I have been learning HTML, CSS, GitHub Pages, and basic programming concepts.</p>
   <p>I am interested in building reliable, user-friendly websites and data-driven applications.</p>
 </section>
 
-<section id="projects">
+<section class="card" id="projects">
   <h2>Featured projects</h2>
 
-  <article class="project">
-    <h3>Portfolio website (GitHub Pages)</h3>
-    <p><strong>Summary:</strong> A simple portfolio website hosted on GitHub Pages.</p>
-    <p><strong>Tech stack:</strong> HTML, CSS, GitHub</p>
-    <p><strong>Challenges:</strong> Learned file naming, linking pages, and deploying updates.</p>
-    <p><a href="https://github.com/jtj534-cyber/jtj534-cyber.github.io">Source code</a></p>
-  </article>
+  <div class="projects">
 
+    <article class="project-card">
+      <h3>Portfolio website (GitHub Pages)</h3>
+      <p><strong>Summary:</strong> A simple portfolio website hosted on GitHub Pages.</p>
+      <p><strong>Tech stack:</strong> HTML, CSS, GitHub</p>
+      <p><strong>Challenges:</strong> Learned file naming, linking pages, and deploying updates.</p>
+      <p><a href="https://github.com/jtj534-cyber/jtj534-cyber.github.io" target="_blank">Source code</a></p>
+    </article>
+
+  </div>
 </section>
 
-<p>
-  <a href="maths.html">View my CS Maths & Tools page</a>
-</p>
+<section class="card">
+  <p>
+    <a href="maths.html">View my CS Maths & Tools page</a>
+  </p>
+</section>
 
-<section id="skills">
+<section class="card" id="skills">
   <h2>Skills and tools</h2>
   <p><strong>Web:</strong> HTML, CSS</p>
   <p><strong>Tools:</strong> Git, GitHub, VS Code</p>
   <p><strong>Interests:</strong> Web development, cybersecurity, data</p>
 </section>
 
-<section id="production-diary">
+<section class="card" id="production-diary">
   <h2>Production diary – Week 15</h2>
   <p><strong>Date:</strong> 13 February 2026</p>
 
@@ -79,7 +86,7 @@
   </p>
 </section>
 
-<section id="contact">
+<section class="card" id="contact">
   <h2>Contact</h2>
 
   <form id="contact-form">
@@ -99,7 +106,7 @@
       <textarea id="message" required></textarea>
     </p>
 
-    <button type="submit">Send message</button>
+    <button type="submit" class="btn btn-primary">Send Message</button>
     <p id="form-status"></p>
 
   </form>
@@ -111,6 +118,8 @@
 <footer class="footer">
   <p>© 2026 Saeed Al-Korbi</p>
 </footer>
+
+</div>
 
 <script>
 
