@@ -123,8 +123,8 @@
 
 <script>
 
-const SUPABASE_URL = "https://cscvospeewcokhxjrdzx.supabase.co";
-const SUPABASE_ANON = "PUT_YOUR_KEY_HERE";
+const SUPABASE_URL = "https://csovospeewcokhxrjdzx.supabase.co";
+const SUPABASE_ANON = "sb_publishable_k8-kwQErio_52NO-ycEF4Q_IK_TU_nO";
 
 document.getElementById("contact-form").addEventListener("submit", async function(event) {
 
@@ -135,30 +135,25 @@ document.getElementById("contact-form").addEventListener("submit", async functio
   const message = document.getElementById("message").value;
   const status = document.getElementById("form-status");
 
-  try {
-    const response = await fetch(`${SUPABASE_URL}/rest/v1/contact`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "apikey": SUPABASE_ANON,
-        "Authorization": `Bearer ${SUPABASE_ANON}`,
-        "Prefer": "return=minimal"
-      },
-      body: JSON.stringify({
-        name: name,
-        email: email,
-        message: message
-      })
-    });
+  const response = await fetch(`${SUPABASE_URL}/rest/v1/contact_messages`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "apikey": SUPABASE_ANON,
+      "Authorization": `Bearer ${SUPABASE_ANON}`,
+      "Prefer": "return=minimal"
+    },
+    body: JSON.stringify({
+      name: name,
+      email: email,
+      message: message
+    })
+  });
 
-    if (response.ok) {
-      status.textContent = "Message sent successfully!";
-      document.getElementById("contact-form").reset();
-    } else {
-      status.textContent = "Error sending message.";
-    }
-
-  } catch (error) {
+  if (response.ok) {
+    status.textContent = "Message sent successfully!";
+    document.getElementById("contact-form").reset();
+  } else {
     status.textContent = "Error sending message.";
   }
 
@@ -168,3 +163,5 @@ document.getElementById("contact-form").addEventListener("submit", async functio
 
 </body>
 </html>
+
+
