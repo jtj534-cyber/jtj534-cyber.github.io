@@ -5,7 +5,6 @@
   <title>CS Maths & Tools – Saeed Al-Korbi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- ربط الثيم -->
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -17,18 +16,22 @@
     <h1>Computer Science Maths & Tools</h1>
 
     <p>
-      This page contains a simple tool that demonstrates how computers work with numbers.
+      This page includes an interactive tool that helps users understand how computers represent numbers using binary.
+    </p>
+
+    <p>
+      It is useful for learning how decimal numbers are converted into binary, which is an essential concept in computer science.
     </p>
 
     <h2>Binary and decimal converter</h2>
 
     <p>
       Computers use binary (0s and 1s) instead of decimal numbers.
-      This tool converts a decimal number into binary.
+      This tool allows users to convert decimal numbers into binary and understand how data is represented in computers.
     </p>
 
-    <!-- Hint box -->
-    <div class="card" style="margin: 20px 0;">
+    <!-- Highlighted Hint -->
+    <div class="card" style="margin: 20px 0; border: 2px solid #3b82f6;">
       <p><strong>Try small numbers like 5, 10, or 42.</strong></p>
     </div>
 
@@ -37,7 +40,7 @@
     <input type="number" id="decimal-input">
 
     <!-- Button -->
-    <button id="convert-btn" class="btn btn-primary">Convert</button>
+    <button id="convert-btn" class="btn btn-primary" style="margin-left:10px;">Convert</button>
 
     <!-- Result -->
     <div id="result" style="margin-top:15px; font-weight:bold;"></div>
@@ -45,6 +48,7 @@
     <p>
       In binary, each position represents a power of 2.
       For example, 1010 = 10 in decimal.
+      Binary is important because computers operate using two states: on and off.
     </p>
 
     <br>
@@ -64,7 +68,7 @@ button.addEventListener("click", function () {
   const value = Number(input.value);
 
   if (Number.isNaN(value) || value < 0) {
-    result.textContent = "Please enter a valid number.";
+    result.textContent = "Please enter a valid non-negative number.";
     return;
   }
 
