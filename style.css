@@ -384,3 +384,11 @@ body.light-mode .form-group textarea:focus {
     flex-direction: column;
   }
 }
+body.light-mode .btn-primary {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: #ffffff;
+}
+
+body.light-mode .btn-primary:hover {
+  color: #ffffff;
+}
