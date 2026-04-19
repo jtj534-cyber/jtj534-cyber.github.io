@@ -16,6 +16,7 @@ body {
   color: #f8fafc;
   line-height: 1.6;
   padding: 30px 20px;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 /* Main layout */
@@ -34,6 +35,7 @@ body {
   padding: 30px;
   margin-bottom: 28px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
 }
 
 /* Header / Hero */
@@ -82,6 +84,8 @@ h1 {
   font-weight: 600;
   font-size: 1rem;
   transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
 }
 
 .btn-primary {
@@ -178,6 +182,20 @@ hr {
   font-size: 0.96rem;
 }
 
+.project-card .btn {
+  margin-top: 10px;
+}
+
+/* Project image */
+.project-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 /* Links */
 a {
   color: #93c5fd;
@@ -208,15 +226,125 @@ footer {
 }
 
 /* Contact section */
-.contact-links {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-  margin-top: 10px;
+#contact {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.contact-links a {
-  text-decoration: none;
+.contact-intro {
+  margin-bottom: 24px;
+  font-size: 1.05rem;
+}
+
+.contact-form {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #f8fafc;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.07);
+  color: #f8fafc;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-group textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18);
+}
+
+#contact .btn {
+  margin-top: 8px;
+}
+
+#form-status {
+  margin-top: 14px;
+  font-weight: 600;
+}
+
+/* Theme switch */
+body.light-mode {
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0, #cbd5e1);
+  color: #0f172a;
+}
+
+body.light-mode .card {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+body.light-mode .project-card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+body.light-mode h1,
+body.light-mode h2 {
+  color: #0f172a;
+}
+
+body.light-mode h3 {
+  color: #2563eb;
+}
+
+body.light-mode p,
+body.light-mode li,
+body.light-mode label,
+body.light-mode .tagline,
+body.light-mode footer {
+  color: #334155;
+}
+
+body.light-mode .btn-secondary {
+  background: rgba(15, 23, 42, 0.06);
+  color: #0f172a;
+  border: 1px solid rgba(15, 23, 42, 0.14);
+}
+
+body.light-mode a {
+  color: #2563eb;
+}
+
+body.light-mode .form-group label {
+  color: #0f172a;
+}
+
+body.light-mode .form-group input,
+body.light-mode .form-group textarea {
+  background: rgba(255, 255, 255, 0.96);
+  color: #0f172a;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+}
+
+body.light-mode .form-group input:focus,
+body.light-mode .form-group textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
 /* Responsive */
@@ -255,122 +383,4 @@ footer {
   .buttons {
     flex-direction: column;
   }
-}
-.project-image {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-
-  /* Theme switch */
-.light-mode {
-  background: linear-gradient(135deg, #f8fafc, #e2e8f0, #cbd5e1);
-  color: #0f172a;
-}
-
-.light-mode .card {
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-}
-
-.light-mode h1,
-.light-mode h2 {
-  color: #0f172a;
-}
-
-.light-mode h3 {
-  color: #2563eb;
-}
-
-.light-mode p,
-.light-mode li,
-.light-mode label,
-.light-mode .tagline {
-  color: #334155;
-}
-
-.light-mode .project-card {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(15, 23, 42, 0.08);
-}
-
-.light-mode .btn-secondary {
-  background: rgba(15, 23, 42, 0.05);
-  color: #0f172a;
-  border: 1px solid rgba(15, 23, 42, 0.12);
-}
-
-.light-mode a {
-  color: #2563eb;
-}
-
-/* Contact section upgrade */
-.contact-card {
-  max-width: 850px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 40px;
-}
-
-.contact-intro {
-  font-size: 1.05rem;
-  margin-bottom: 25px;
-}
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 600;
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 14px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.06);
-  color: #f8fafc;
-  font-family: 'Inter', sans-serif;
-  font-size: 1rem;
-  outline: none;
-  transition: all 0.3s ease;
-}
-
-.form-group textarea {
-  resize: vertical;
-  min-height: 140px;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18);
-}
-
-#form-status {
-  margin-top: 15px;
-  font-weight: 600;
-}
-
-/* Light mode form */
-.light-mode .form-group input,
-.light-mode .form-group textarea {
-  background: rgba(255, 255, 255, 0.95);
-  color: #0f172a;
-  border: 1px solid rgba(15, 23, 42, 0.12);
-}
-
-.light-mode .form-group input:focus,
-.light-mode .form-group textarea:focus {
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
-}
-  border-radius: 14px;
-  margin-bottom: 15px;
-  border: 1px solid rgba(255,255,255,0.1);
 }
