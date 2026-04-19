@@ -113,13 +113,13 @@
       </p>
     </section>
 
-    <section class="card contact-card" id="contact">
+    <section class="card" id="contact">
       <h2>Contact</h2>
       <p class="contact-intro">
         Please use the form below to send me a message. I am happy to discuss my projects, skills, and future opportunities.
       </p>
 
-      <form id="contact-form">
+      <form id="contact-form" class="contact-form">
         <div class="form-group">
           <label for="name">Your name</label>
           <input type="text" id="name" required>
@@ -150,57 +150,70 @@
 
 <script>
 const themeToggle = document.getElementById("theme-toggle");
+const contactForm = document.getElementById("contact-form");
 
-if (localStorage.getItem("theme") === "light") {
-  document.body.classList.add("light-mode");
-  themeToggle.textContent = "Dark Mode";
-}
+if (themeToggle) {
+  const savedTheme = localStorage.getItem("theme");
 
-themeToggle.addEventListener("click", function () {
-  document.body.classList.toggle("light-mode");
-
-  if (document.body.classList.contains("light-mode")) {
-    localStorage.setItem("theme", "light");
+  if (savedTheme === "light") {
+    document.body.classList.add("light-mode");
     themeToggle.textContent = "Dark Mode";
   } else {
-    localStorage.setItem("theme", "dark");
     themeToggle.textContent = "Light Mode";
   }
-});
+
+  themeToggle.addEventListener("click", function () {
+    document.body.classList.toggle("light-mode");
+
+    if (document.body.classList.contains("light-mode")) {
+      localStorage.setItem("theme", "light");
+      themeToggle.textContent = "Dark Mode";
+    } else {
+      localStorage.setItem("theme", "dark");
+      themeToggle.textContent = "Light Mode";
+    }
+  });
+}
 
 const SUPABASE_URL = "https://csovospeewcokhxrjdzx.supabase.co";
 const SUPABASE_ANON = "sb_publishable_k8-kwQErio_52NO-ycEF4Q_IK_TU_nO";
 
-document.getElementById("contact-form").addEventListener("submit", async function(event) {
-  event.preventDefault();
+if (contactForm) {
+  contactForm.addEventListener("submit", async function(event) {
+    event.preventDefault();
 
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const message = document.getElementById("message").value;
-  const status = document.getElementById("form-status");
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+    const status = document.getElementById("form-status");
 
-  const response = await fetch(`${SUPABASE_URL}/rest/v1/contact_messages`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "apikey": SUPABASE_ANON,
-      "Authorization": `Bearer ${SUPABASE_ANON}`,
-      "Prefer": "return=minimal"
-    },
-    body: JSON.stringify({
-      name: name,
-      email: email,
-      message: message
-    })
+    try {
+      const response = await fetch(`${SUPABASE_URL}/rest/v1/contact_messages`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": SUPABASE_ANON,
+          "Authorization": `Bearer ${SUPABASE_ANON}`,
+          "Prefer": "return=minimal"
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          message: message
+        })
+      });
+
+      if (response.ok) {
+        status.textContent = "Message sent successfully!";
+        contactForm.reset();
+      } else {
+        status.textContent = "Error sending message.";
+      }
+    } catch (error) {
+      status.textContent = "Error sending message.";
+    }
   });
-
-  if (response.ok) {
-    status.textContent = "Message sent successfully!";
-    document.getElementById("contact-form").reset();
-  } else {
-    status.textContent = "Error sending message.";
-  }
-});
+}
 </script>
 
 </body>
